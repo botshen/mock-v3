@@ -44,5 +44,9 @@ export default defineManifest(async (env) => ({
       matches: ['*://*/*'],
       resources: ['src/content-script/iframe/index.html'],
     },
+    {
+      matches: ['*://*/*'],
+      resources: ['inject.js'],
+    },
   ],
 }))

@@ -5,7 +5,7 @@
     aria-label="Site Header"
     class="bg-gray-50"
   >
-    Content Script Iframe Header
+    Content Script Iframe 1
   </header>
 
   <RouterView></RouterView>

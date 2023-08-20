@@ -86,6 +86,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         iframe: 'src/content-script/iframe/index.html',
+        inject: 'src/content-script/inject.ts'
       },
     },
   },

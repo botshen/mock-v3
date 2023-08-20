@@ -10,3 +10,13 @@ const iframe = new DOMParser().parseFromString(
 if (iframe) {
   document.body?.append(iframe)
 }
+
+const script = document.createElement('script')
+script.setAttribute('type', 'text/javascript')
+script.setAttribute('src', chrome.runtime.getURL('inject.js'))
+document.documentElement.appendChild(script)
+
+// const input = document.createElement('input')
+// input.setAttribute('id', 'xxxxx')
+// input.setAttribute('style', 'display:none')
+// document.documentElement.appendChild(input)

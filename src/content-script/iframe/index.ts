@@ -15,5 +15,6 @@ router.beforeEach((to) => {
 })
 
 console.log({ routes })
+console.log('12138',12138)
 
 createApp(App).use(router).mount('#app')
