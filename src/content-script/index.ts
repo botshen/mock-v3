@@ -13,7 +13,7 @@ if (iframe) {
 
 const script = document.createElement('script')
 script.setAttribute('type', 'text/javascript')
-script.setAttribute('src', chrome.runtime.getURL('inject.js'))
+script.setAttribute('src', chrome.runtime.getURL('src/inject/index.js'))
 document.documentElement.appendChild(script)
 
 // const input = document.createElement('input')

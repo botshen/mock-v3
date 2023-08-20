@@ -8,6 +8,9 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import manifest from './manifest.config'
+ 
+
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -81,15 +84,51 @@ export default defineConfig({
         )
       },
     },
+    // Add the TypeScript plugin
+    // typescript({
+    //   tsconfig: 'tsconfig.json', // Adjust the path to your tsconfig.json if needed
+    //   clean: true,
+    //   tsconfigOverride: {
+    //     include: ['src/content-script/inject.ts'],
+    //   },
+    // }),
+    // alias({
+    //   entries: {
+    //     // Map the input path to the desired output path
+    //     // Update this path according to your project structure
+    //     'src/content-script/inject.ts': 'src/content-script/inject.ts',
+    //   },
+    // }),
   ],
   build: {
+    // rollupOptions: {
+    //   input: {
+    //     iframe: 'src/content-script/iframe/index.html',
+    //     inject: 'src/content-script/inject.ts',
+    //   },
+    // },
     rollupOptions: {
+      // input: {
+      //   iframe: 'src/content-script/iframe/index.html',
+      //   inject: 'src/content-script/inject.ts', // Keep .ts extension
+      // },
+      // // Specify the output options
+      // output: {
+      //   dir: 'dist/src/inject', // Set the output directory
+      //   entryFileNames: '[name]/index.js', // Set the output file name pattern
+      // },
       input: {
         iframe: 'src/content-script/iframe/index.html',
-        inject: 'src/content-script/inject.ts'
+        // Use the new alias path for inject.ts
+        inject: 'src/content-script/inject.ts',
+      },
+      // Specify the output options
+      output: {
+        dir: 'dist', // Set the main output directory
+        entryFileNames: 'src/inject/index.js', // Set the desired output file name
       },
     },
-  },
+   },
   server: {
     port: 8888,
     strictPort: true,
