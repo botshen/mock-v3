@@ -1,5 +1,5 @@
-// import { proxy } from "./inject/index";
-import { proxy } from "ajax-hook";
+import { proxy } from "./inject/index";
+// import { proxy } from "ajax-hook";
 proxy({
     //请求发起前进入
     onRequest: (config, handler) => {
