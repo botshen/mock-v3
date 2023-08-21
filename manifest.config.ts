@@ -31,6 +31,12 @@ export default defineManifest(async (env) => ({
       matches: ['*://*/*'],
       run_at: 'document_end',
     },
+    {
+      all_frames: true,
+      js: ['src/content-script/inject.ts'],
+      matches: ['*://*/*'],
+      run_at: 'document_end',
+    },
   ],
   host_permissions: ['*://*/*'],
   options_page: 'src/options/index.html',
@@ -44,14 +50,9 @@ export default defineManifest(async (env) => ({
       matches: ['*://*/*'],
       resources: ['src/content-script/iframe/index.html'],
     },
-    // {
-    //   matches: ["<all_urls>"],
-    //   resources: ['src/content-script/inject.ts'],
-    // },
     {
-      matches: ["<all_urls>"],
-      resources: ['src/inject/index.js'],
+      matches: ['<all_urls>'],
+      resources: ['src/content-script/inject.ts'],
     },
-    
   ],
 }))

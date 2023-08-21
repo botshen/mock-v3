@@ -8,9 +8,6 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import manifest from './manifest.config'
- 
-
-
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -120,15 +117,15 @@ export default defineConfig({
       input: {
         iframe: 'src/content-script/iframe/index.html',
         // Use the new alias path for inject.ts
-        inject: 'src/content-script/inject.ts',
+        // inject: 'src/content-script/inject.ts',
       },
       // Specify the output options
       output: {
         dir: 'dist', // Set the main output directory
-        entryFileNames: 'src/inject/index.js', // Set the desired output file name
+        // entryFileNames: 'src/inject/index.js', // Set the desired output file name
       },
     },
-   },
+  },
   server: {
     port: 8888,
     strictPort: true,
