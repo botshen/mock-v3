@@ -117,12 +117,12 @@ export default defineConfig({
       input: {
         iframe: 'src/content-script/iframe/index.html',
         // Use the new alias path for inject.ts
-        // inject: 'src/content-script/inject.ts',
+        inject: 'src/content-script/inject.ts',
       },
       // Specify the output options
       output: {
         dir: 'dist', // Set the main output directory
-        // entryFileNames: 'src/inject/index.js', // Set the desired output file name
+        entryFileNames: 'src/inject/index.js', // Set the desired output file name
       },
     },
   },
